@@ -13,12 +13,12 @@ jobs:
     steps:
       - checkout
       - run: echo "Asp.Net Web Application."
-      - run: |
-        git submodule update --init --recursive
-        git submodule status --recursive        
       - run:
           name: Restore packages.
-          command: dotnet restore
+          command: | 
+          git submodule update --init --recursive
+          git submodule status --recursive        
+          dotnet restore
       - run:
           name: Build
           command: dotnet build
