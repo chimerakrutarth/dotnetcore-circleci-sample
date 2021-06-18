@@ -13,6 +13,11 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    - name: Checkout submodules
+      run: |
+        git submodule update --init --recursive
+        # Write out the status for debugging purposes. Are we checked out at tags?
+        git submodule status --recursive        
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
