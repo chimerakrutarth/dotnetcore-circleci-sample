@@ -1,0 +1,3 @@
+[submodule "dotnetcore-git-submodule-sample"]
+	path = dotnetcore-git-submodule-sample
+	url = https://github.com/chimerakrutarth/dotnetcore-git-submodule-sample.git
