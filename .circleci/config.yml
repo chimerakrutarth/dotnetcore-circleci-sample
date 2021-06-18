@@ -7,4 +7,10 @@ jobs:
     
      steps:
        - checkout
+       - run:
+          name: Checkout submodules
+          command: |
+            git submodule update --init --recursive
+            # Write out the status for debugging purposes. Are we checked out at tags?
+            git submodule status --recursive
        - run: dotnet build
